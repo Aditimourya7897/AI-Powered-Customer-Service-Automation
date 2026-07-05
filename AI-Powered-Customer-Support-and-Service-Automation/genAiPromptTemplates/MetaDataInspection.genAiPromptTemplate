@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiPromptTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <activeVersionIdentifier>/N/r0M+MMJ7HzNQMvLvq1viWj707czDQ3CWJQksbl3o=_1</activeVersionIdentifier>
+    <developerName>MetaDataInspection</developerName>
+    <masterLabel>MetaDataInspection</masterLabel>
+    <overridable>false</overridable>
+    <relatedEntity>User_Cases__c</relatedEntity>
+    <relatedField>User_Cases__c.AI_Summary__c</relatedField>
+    <templateVersions>
+        <content>{!$Input:User_Cases__c.Name} 
+{!$Input:User_Cases__c.CreatedDate}
+{!$Input:User_Cases__c.Status__c}
+
+Generate a clear and professional inspection summary using the provided inspection details. 
+Explain the inspection status, inspection date, and key observations. 
+Ensure the summary is easy to understand and suitable for business users.
+
+
+</content>
+        <fileDroppingStrategy>{&quot;dropFilesBy&quot;:&quot;LAST_MODIFIED_DATE&quot;,&quot;dropFileStartingWith&quot;:&quot;OLDEST&quot;}</fileDroppingStrategy>
+        <inputs>
+            <apiName>RelatedEntity</apiName>
+            <definition>SOBJECT://User_Cases__c</definition>
+            <referenceName>Input:User_Cases__c</referenceName>
+            <required>true</required>
+        </inputs>
+        <isCitationEnabled>false</isCitationEnabled>
+        <primaryModel>sfdc_ai__DefaultGPT5Mini</primaryModel>
+        <status>Published</status>
+        <versionIdentifier>/N/r0M+MMJ7HzNQMvLvq1viWj707czDQ3CWJQksbl3o=_1</versionIdentifier>
+    </templateVersions>
+    <type>einstein_gpt__fieldCompletion</type>
+    <visibility>Global</visibility>
+</GenAiPromptTemplate>
